@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Montserrat';
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+button {
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin: 0 10px;
+  font-size: 16px;
+  background-color: '#DDDDDD';
+}
+
+button:hover {
+  background-color: #61dafb;
+}
+
+.flexRowStyle {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.spaceBetweenStyle {
+  justify-content: space-between;
+}
+
+.eightyPercentStyle {
+  width: 80%;
+  margin: auto;
+}
+
+.ninetyFivePercentStyle {
+  width: 95%;
+  margin: auto;
+}
+
+.reactLogo {
+  height: 54px;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reactLogo {
+    animation: reactLogoSpin infinite 10s linear;
+  }
+}
+
+@keyframes reactLogoSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
