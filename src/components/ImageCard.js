@@ -1,7 +1,13 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import logo from '../logo.svg';
+import { Favorite, FavoriteBorder } from '@material-ui/icons';
 
 const ImageCard = (props) => {
+  const [isFavorite, setIsFavorite] = useState(props.imageFavorite);
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  }
   return <div style={styles.imageCardStyle}>
     <img
       src={props.imagePath != undefined ? props.imagePath : logo}
@@ -12,11 +18,16 @@ const ImageCard = (props) => {
       <p style={styles.imageDateStyle}>{props.imageDate}</p>
       <p style={styles.imageDescriptionStyle}>{props.imageDesc}</p>
     </div>
+    <div style={styles.imageCardFavoriteButtonStyle} onClick={toggleFavorite}>
+      {isFavorite ? <Favorite style={styles.favoriteIconStyle} />
+        : <FavoriteBorder style={styles.favoriteIconStyle} />}
+    </div>
   </div>;
 };
 
 const styles = {
   imageCardStyle: {
+    position: 'relative',
     maxWidth: '420px',
     display: 'flex',
     flexDirection: 'column',
@@ -32,6 +43,23 @@ const styles = {
     borderRadius: '10px 10px 0px 0px',
     height: '270px',
     boxFit: 'contain',
+  },
+  imageCardFavoriteButtonStyle: {
+    position: 'absolute',
+    display: 'flex',
+    top: '220px',
+    right: '10px',
+    padding: '7px',
+    borderRadius: '50%',
+    backgroundColor: '#1d1d1d75',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  favoriteIconStyle: {
+    opacity: '100%',
+    height: '25px',
+    width: '25px',
+    color: '#E53935',
   },
   imageCardTextStyle: {
     borderRadius: '0px 0px 10px 10px',
@@ -56,6 +84,10 @@ const styles = {
     fontSize: '16px',
     margin: '10px',
   },
+}
+
+ImageCard.defaultProps = {
+  imageFavorite: false,
 }
 
 export default ImageCard;

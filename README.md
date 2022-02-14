@@ -4,7 +4,7 @@
 A image gallery website created to practice React with the following and much more:  
 * Functional Components  
 * Hooks  
-* Navigation  
+* React Router  
 * Redux  
 * API calling  
 * Custom CSS  

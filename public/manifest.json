@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Simple Image Gallery",
+  "name": "A image gallery website to practice React with Hooks, Navigation, Redux, API calling, Custom CSS etc.",
   "icons": [
     {
       "src": "favicon.ico",
