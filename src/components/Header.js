@@ -14,7 +14,7 @@ function Header() {
   };
 
   const handleSubmitClick = (event) => {
-    console.log(searchQuery);
+    console.log(`Submitted: ${searchQuery}`);
   }
 
   return <div style={styles.headerStyle}>
