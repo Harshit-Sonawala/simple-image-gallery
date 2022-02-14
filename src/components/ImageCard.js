@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import logo from '../logo.svg';
-import { Favorite, FavoriteBorder } from '@material-ui/icons';
+import { Favorite, FavoriteBorder, Event } from '@material-ui/icons';
+import '../App.css';
 
 const ImageCard = (props) => {
   const [isFavorite, setIsFavorite] = useState(props.imageFavorite);
@@ -15,7 +16,10 @@ const ImageCard = (props) => {
     />
     <div style={styles.imageCardTextStyle}>
       <p style={styles.imageTitleStyle}>{props.imageTitle}</p>
-      <p style={styles.imageDateStyle}>{props.imageDate}</p>
+      <p className='flexRowStyle flexStartJustifyStyle' style={styles.imageDateStyle}>
+        <Event style={styles.imageDateIconStyle} />
+        {props.imageDate}
+      </p>
       <p style={styles.imageDescriptionStyle}>{props.imageDesc}</p>
     </div>
     <div style={styles.imageCardFavoriteButtonStyle} onClick={toggleFavorite}>
@@ -51,9 +55,8 @@ const styles = {
     right: '10px',
     padding: '7px',
     borderRadius: '50%',
-    backgroundColor: '#1d1d1d75',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#00000080',
+    cursor: 'pointer',
   },
   favoriteIconStyle: {
     opacity: '100%',
@@ -73,6 +76,10 @@ const styles = {
     margin: '10px',
     borderBottom: '2px solid #DDDDDD',
     fontSize: '22px',
+  },
+  imageDateIconStyle: {
+    fontSize: '20px',
+    margin: '0px 5px',
   },
   imageDateStyle: {
     color: '#61DAFB',

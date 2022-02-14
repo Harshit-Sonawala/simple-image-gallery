@@ -44,7 +44,15 @@ button:hover {
   justify-content: center;
 }
 
-.spaceBetweenStyle {
+.flexStartAlignStyle {
+  align-items: flex-start;
+}
+
+.flexStartJustifyStyle {
+  justify-content: flex-start;
+}
+
+.flexSpaceBetweenJustifyStyle {
   justify-content: space-between;
 }
 

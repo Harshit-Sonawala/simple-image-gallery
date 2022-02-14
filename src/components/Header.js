@@ -19,7 +19,7 @@ function Header() {
 
   return <div style={styles.headerStyle}>
     <div className='eightyPercentStyle'>
-      <div className='flexRowStyle spaceBetweenStyle'>
+      <div className='flexRowStyle flexSpaceBetweenJustifyStyle'>
         <div className="flexRowStyle">
           {/* Logo */}
           <img src={logo} className='reactLogo' alt='logo' />
