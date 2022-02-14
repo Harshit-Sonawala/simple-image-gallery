@@ -37,6 +37,10 @@ button:hover {
   background-color: #61dafb;
 }
 
+.activeOpacity:active {
+  opacity: 0.2;
+}
+
 .flexRowStyle {
   display: flex;
   flex-flow: row wrap;

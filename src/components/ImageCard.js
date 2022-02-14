@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import logo from '../logo.svg';
 import { Favorite, FavoriteBorder, Event } from '@material-ui/icons';
@@ -22,7 +21,7 @@ const ImageCard = (props) => {
       </p>
       <p style={styles.imageDescriptionStyle}>{props.imageDesc}</p>
     </div>
-    <div style={styles.imageCardFavoriteButtonStyle} onClick={toggleFavorite}>
+    <div style={styles.imageCardFavoriteButtonStyle} className='activeOpacity' onClick={toggleFavorite}>
       {isFavorite ? <Favorite style={styles.favoriteIconStyle} />
         : <FavoriteBorder style={styles.favoriteIconStyle} />}
     </div>

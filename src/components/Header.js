@@ -37,7 +37,7 @@ function Header() {
           <button
             onClick={handleSubmitClick}
             style={styles.buttonStyle}
-            className='buttonHoverStyle'
+            className='buttonHoverStyle activeOpacity'
           >
             Submit
           </button>
