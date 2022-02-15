@@ -1,7 +1,9 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import ImageCard from './components/ImageCard';
+import Favorites from './components/Favorites';
 
 const App = () => {
 
@@ -92,25 +94,36 @@ const App = () => {
     },
   ];
 
-  return <div>
+  return <Router>
     <Header />
     <div className='bodyStyle'>
-      <div className='ninetyFivePercentStyle'>
-        <div className='flexRowStyle'>
-          {imageList.map((eachImage) => {
-            return <ImageCard
-              key={eachImage.imageId}
-              imageId={eachImage.imageId}
-              imagePath={eachImage.imagePath}
-              imageDate={eachImage.imageDate}
-              imageTitle={eachImage.imageTitle}
-              imageDesc={eachImage.imageDesc}
-            />
-          })}
-        </div>
-      </div>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <div className='ninetyFivePercentStyle'>
+              <div className='flexRowStyle'>
+                {imageList.map((eachImage) => {
+                  return <ImageCard
+                    key={eachImage.imageId}
+                    imageId={eachImage.imageId}
+                    imagePath={eachImage.imagePath}
+                    imageDate={eachImage.imageDate}
+                    imageTitle={eachImage.imageTitle}
+                    imageDesc={eachImage.imageDesc}
+                  />
+                })}
+              </div>
+            </div>
+          }
+        />
+        <Route
+          path='/favorites'
+          element={<Favorites />}
+        />
+      </Routes>
     </div>
-  </div>;
+  </Router>;
 }
 
 export default App;

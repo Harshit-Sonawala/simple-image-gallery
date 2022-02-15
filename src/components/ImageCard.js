@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../logo.svg';
-import { Favorite, FavoriteBorder, Event } from '@material-ui/icons';
+import { Favorite, FavoriteBorder, OpenInNew, Event } from '@material-ui/icons';
 import '../App.css';
 
 const ImageCard = (props) => {
@@ -21,9 +21,22 @@ const ImageCard = (props) => {
       </p>
       <p style={styles.imageDescriptionStyle}>{props.imageDesc}</p>
     </div>
-    <div style={styles.imageCardFavoriteButtonStyle} className='activeOpacity' onClick={toggleFavorite}>
-      {isFavorite ? <Favorite style={styles.favoriteIconStyle} />
-        : <FavoriteBorder style={styles.favoriteIconStyle} />}
+    <div className='flexRowStyle' style={styles.iconOptionsRowStyle}>
+      <div
+        style={styles.imageCardIconButtonStyle}
+        className='activeOpacity'
+        onClick={toggleFavorite}
+      >
+        {isFavorite ? <Favorite style={styles.favoriteIconStyle} />
+          : <FavoriteBorder style={styles.favoriteIconStyle} />}
+      </div>
+      <div
+        style={styles.imageCardIconButtonStyle}
+        className='activeOpacity'
+        onClick={() => { }}
+      >
+        {<OpenInNew style={styles.openInNewIconStyle} />}
+      </div>
     </div>
   </div>;
 };
@@ -47,21 +60,29 @@ const styles = {
     height: '270px',
     boxFit: 'contain',
   },
-  imageCardFavoriteButtonStyle: {
+  iconOptionsRowStyle: {
     position: 'absolute',
-    display: 'flex',
     top: '220px',
     right: '10px',
+    display: 'flex',
+  },
+  imageCardIconButtonStyle: {
+    display: 'flex',
     padding: '7px',
+    margin: '0 5px',
     borderRadius: '50%',
     backgroundColor: '#00000080',
     cursor: 'pointer',
   },
   favoriteIconStyle: {
-    opacity: '100%',
-    height: '25px',
-    width: '25px',
+    height: '20px',
+    width: '20px',
     color: '#E53935',
+  },
+  openInNewIconStyle: {
+    height: '20px',
+    width: '20px',
+    color: '#FFFFFF',
   },
   imageCardTextStyle: {
     borderRadius: '0px 0px 10px 10px',

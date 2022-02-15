@@ -37,6 +37,19 @@ button:hover {
   background-color: #61dafb;
 }
 
+Link {
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin: 0 10px;
+  font-size: 16px;
+  background-color: '#DDDDDD';
+  cursor: pointer;
+}
+
+Link:hover {
+  background-color: #61dafb;
+}
+
 .activeOpacity:active {
   opacity: 0.2;
 }

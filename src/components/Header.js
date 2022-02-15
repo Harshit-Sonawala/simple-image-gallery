@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import logo from '../logo.svg';
+import { Search, Favorite } from '@material-ui/icons';
 import '../App.css';
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState('');
+  const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(searchQuery);
@@ -13,8 +17,12 @@ function Header() {
     setSearchQuery(event.target.value);
   };
 
-  const handleSubmitClick = (event) => {
+  const handleSubmitClick = () => {
     console.log(`Submitted: ${searchQuery}`);
+  }
+
+  const handleFavoritesClick = () => {
+    navigate('/favorites');
   }
 
   return <div style={styles.headerStyle}>
@@ -27,7 +35,7 @@ function Header() {
             Simple Image Gallery
           </h1>
         </div>
-        <div className='flexRow'>
+        <div className='flexRowStyle'>
           <input
             type='text'
             onChange={handleSearchQueryChange}
@@ -36,10 +44,17 @@ function Header() {
           />
           <button
             onClick={handleSubmitClick}
-            style={styles.buttonStyle}
+            style={styles.searchButtonStyle}
             className='buttonHoverStyle activeOpacity'
           >
-            Submit
+            <Search style={styles.searchIconStyle} />
+          </button>
+          <button
+            onClick={handleFavoritesClick}
+            style={styles.searchButtonStyle}
+            className='buttonHoverStyle activeOpacity'
+          >
+            <Favorite style={styles.searchIconStyle} />
           </button>
         </div>
       </div>
@@ -58,6 +73,15 @@ const styles = {
     padding: '8px 10px',
     fontSize: '16px',
   },
+  searchButtonStyle: {
+    padding: '8px 10px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  searchIconStyle: {
+    fontSize: '20px',
+  }
 }
 
 export default Header;
