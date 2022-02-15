@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import logo from '../logo.svg';
 import { Search, Favorite } from '@material-ui/icons';
 import '../App.css';
@@ -29,11 +29,12 @@ function Header() {
     <div className='eightyPercentStyle'>
       <div className='flexRowStyle flexSpaceBetweenJustifyStyle'>
         <div className="flexRowStyle">
-          {/* Logo */}
           <img src={logo} className='reactLogo' alt='logo' />
-          <h1>
-            Simple Image Gallery
-          </h1>
+          <Link to='/'>
+            <h1>
+              Simple Image Gallery
+            </h1>
+          </Link>
         </div>
         <div className='flexRowStyle'>
           <input

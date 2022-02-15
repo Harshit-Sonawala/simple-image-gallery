@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Favorites = () => {
   return (
-    <div>
+    <div className='eightyPercentStyle'>
       <h1>Favorites</h1>
-      <Link to='/'>Go Back</Link>
     </div>
   )
 }

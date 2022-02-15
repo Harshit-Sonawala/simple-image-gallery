@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../logo.svg';
 import { Favorite, FavoriteBorder, OpenInNew, Event } from '@material-ui/icons';
 import '../App.css';
 
 const ImageCard = (props) => {
   const [isFavorite, setIsFavorite] = useState(props.imageFavorite);
+  const navigate = useNavigate();
+
   const toggleFavorite = () => {
     setIsFavorite(!isFavorite);
   }
+
   return <div style={styles.imageCardStyle}>
     <img
       src={props.imagePath != undefined ? props.imagePath : logo}
@@ -33,7 +37,7 @@ const ImageCard = (props) => {
       <div
         style={styles.imageCardIconButtonStyle}
         className='activeOpacity'
-        onClick={() => { }}
+        onClick={() => { navigate('/imageDescription', { state: props.imageId }) }}
       >
         {<OpenInNew style={styles.openInNewIconStyle} />}
       </div>

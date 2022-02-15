@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import ImageCard from './components/ImageCard';
 import Favorites from './components/Favorites';
+import ImageDescription from './components/ImageDescription';
 
 const App = () => {
 
@@ -120,6 +121,10 @@ const App = () => {
         <Route
           path='/favorites'
           element={<Favorites />}
+        />
+        <Route
+          path='/imageDescription'
+          element={<ImageDescription />}
         />
       </Routes>
     </div>
