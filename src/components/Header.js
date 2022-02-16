@@ -6,7 +6,7 @@ import '../App.css';
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState('');
-  const params = useParams();
+  // const params = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {

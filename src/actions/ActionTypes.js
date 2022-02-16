@@ -1,0 +1,1 @@
+export const IMAGE_LIST_FROM_API_CHANGED = 'image_list_from_api_changed';
